@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 import conn from "./db.js"
 import { Subscribe } from "./models/Subscribe.js"
 
-const port = 3000
+const port = process.env.PORT || 3000
 const host = 'localhost'
 const app = express()
 
