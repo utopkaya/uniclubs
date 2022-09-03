@@ -3,6 +3,8 @@ import dotenv from "dotenv"
 import conn from "./db.js"
 import { Subscribe } from "./models/Subscribe.js"
 import alert from "alert-node"
+import fs from "fs"
+
 
 const port = process.env.PORT || 3000
 const host = 'localhost'
@@ -47,12 +49,18 @@ app.get('/', (req, res) => {
 // })
 
 app.post("/save", (req,res) => {
-    
+
     Subscribe.create({
         ...req.body
     })
 
-    alert("Tebrikler! Abone oldunuz.")
+
+    fs.appendFile("./subscribers/SubscribeList.txt",`\n${req.body.email}`, (err)=>{
+        if(err){
+            console.log(err);
+        }
+    })
+
 
     res.redirect("/")
 })
