@@ -5,7 +5,7 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "keywords": [
     "community",
@@ -23,5 +23,13 @@
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "mongoose": "^6.5.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/utopkaya/uniclubs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/utopkaya/uniclubs/issues"
+  },
+  "homepage": "https://github.com/utopkaya/uniclubs#readme"
 }
